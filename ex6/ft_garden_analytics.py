@@ -68,7 +68,7 @@ class GardenManager:
         self.stats = GardenManager.GardenStats()
         GardenManager.total_gardens += 1
 
-    def add_plant(self, plant: str) -> None:
+    def add_plant(self, plant: object) -> None:
         self.plants.append(plant)
         self.stats.record_plant_added(plant)
         print(f"Added {plant.name} to {self.owner}'s garden")
@@ -119,7 +119,6 @@ if __name__ == "__main__":
     oak = Plant("Oak Tree", 100)
     rose = FloweringPlant("Rose", 25, "red")
     sunflower = PrizeFlower("Sunflower", 50, "yellow", 10)
-
     alice_garden.add_plant(oak)
     alice_garden.add_plant(rose)
     alice_garden.add_plant(sunflower)
