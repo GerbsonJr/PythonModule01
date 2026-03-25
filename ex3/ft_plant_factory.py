@@ -1,11 +1,11 @@
 class Plant:
-    def __init__(self, name: str, height: int, age: int) -> None:
+    def __init__(self, name: str, height: float, age: int) -> None:
         self.name = name
-        self.height = height
+        self.height = float(height)
         self.age = age
 
-    def __str__(self) -> str:
-        return f"{self.name} ({self.height}cm, {self.age} days)"
+    def show(self) -> str:
+        return f"{self.name} ({round(self.height, 1)}cm, {self.age} days)"
 
 
 if __name__ == "__main__":
@@ -18,9 +18,11 @@ if __name__ == "__main__":
     ]
     print("=== Plant Factory Output ===")
     plants = []
+    count = 0
     for name, height, age in plant_data:
         plant = Plant(name, height, age)
         plants.append(plant)
-        print(f"Created: {plant}")
+        count += 1
+        print(f"Created: {plant.show()}")
     print("")
-    print(f"Total plants created: {len(plants)}")
+    print(f"Total plants created: {count}")
