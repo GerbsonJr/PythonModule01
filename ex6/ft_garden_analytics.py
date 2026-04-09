@@ -130,7 +130,6 @@ class Seed(Flower):
 def display_statistics(plant: Plant) -> None:
     print(f"[statistics for {plant.name}]")
     plant._stats_display()
-    print()
 
 
 if __name__ == "__main__":
@@ -139,8 +138,9 @@ if __name__ == "__main__":
     print("=== Check year-old")
     print(f"Is 30 days more than a year? -> {Plant.is_older_than_year(30)}")
     print(
-        f"Is 400 days more than a year? -> {Plant.is_older_than_year(400)}\n"
+        f"Is 400 days more than a year? -> {Plant.is_older_than_year(400)}"
     )
+    print()
 
     print("=== Flower")
     rose = Flower("Rose", 15.0, 10, "red")
@@ -151,6 +151,7 @@ if __name__ == "__main__":
     rose.bloom()
     rose.show()
     display_statistics(rose)
+    print()
 
     print("=== Tree")
     oak = Tree("Oak", 200.0, 365, 5.0)
@@ -159,6 +160,7 @@ if __name__ == "__main__":
     print("[asking the oak to produce shade]")
     oak.produce_shade()
     display_statistics(oak)
+    print()
 
     print("=== Seed")
     sunflower = Seed("Sunflower", 80.0, 45, "yellow")
@@ -169,6 +171,7 @@ if __name__ == "__main__":
     sunflower.bloom()
     sunflower.show()
     display_statistics(sunflower)
+    print()
 
     print("=== Anonymous")
     unknown = Plant.anonymous()

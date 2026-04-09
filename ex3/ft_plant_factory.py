@@ -1,11 +1,27 @@
 class Plant:
     def __init__(self, name: str, height: float, age: int) -> None:
         self.name = name
-        self.height = float(height)
-        self.age = age
+        self.height = height
+        self.plant_age = age
+
+    def grow(self) -> None:
+        h = round(self.height / self.plant_age, 1)
+        if h == 0:
+            h = 0.1
+        self.height += h
+
+    def age(self) -> None:
+        self.plant_age += 1
+
+    def update(self) -> None:
+        self.grow()
+        self.age()
 
     def show(self) -> str:
-        return f"{self.name} ({round(self.height, 1)}cm, {self.age} days)"
+        return (
+            f"{self.name}: {round(self.height, 1)}cm,"
+            f" {self.plant_age} days old"
+        )
 
 
 if __name__ == "__main__":
@@ -24,5 +40,3 @@ if __name__ == "__main__":
         plants.append(plant)
         count += 1
         print(f"Created: {plant.show()}")
-    print("")
-    print(f"Total plants created: {count}")

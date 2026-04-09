@@ -39,9 +39,9 @@ class Flower(Plant):
         super().show()
         print(f"Color: {self.color}")
         if self._bloomed:
-            print(f"{self.name} is blooming beautifully!\n")
+            print(f"{self.name} is blooming beautifully!")
         else:
-            print(f"{self.name} has not bloomed yet\n")
+            print(f"{self.name} has not bloomed yet")
 
 
 class Tree(Plant):
@@ -54,7 +54,7 @@ class Tree(Plant):
         print(
             f"Tree {self.name} now produces a shade of "
             f"{round(self._height, 1)}cm long and "
-            f"{round(self.trunk_diameter, 1)}cm wide.\n"
+            f"{round(self.trunk_diameter, 1)}cm wide."
         )
 
     def show(self) -> None:
@@ -77,7 +77,6 @@ class Vegetable(Plant):
 
     def grow(self, amount: float) -> None:
         super().grow(amount)
-        self.nutritional_value += 1
 
     def age(self, days: int) -> None:
         super().age(days)
@@ -98,17 +97,19 @@ if __name__ == "__main__":
     print("[asking the rose to bloom]")
     rose.bloom()
     rose.show()
+    print()
 
     print("=== Tree")
     oak = Tree("Oak", 200.0, 365, 5.0)
     oak.show()
     print("[asking the oak to produce shade]")
     oak.produce_shade()
+    print()
 
     print("=== Vegetable")
     tomato = Vegetable("Tomato", 5.0, 10, "April", 0)
     tomato.show()
     print("[make tomato grow and age for 20 days]")
-    tomato.grow(42.0)   # 5.0 + 42.0 = 47.0
-    tomato.age(20)      # 10 + 20 = 30; nutritional_value += 20
+    tomato.grow(42.0)
+    tomato.age(20)
     tomato.show()
